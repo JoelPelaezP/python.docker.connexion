@@ -1,0 +1,27 @@
+openapi: 3.0.3
+info:
+  title: Api swagger
+  description: Api Swagger description
+  version: 01-01-2024
+  contact:
+    name: API contact
+    url: "https://www.google.com"
+    email: "josh.joelpp@hotmail.com"
+
+servers:
+  - url: /v1
+    description: Web Service API
+
+paths:
+  /check-status:
+    get:
+      summary: Check API status
+      operationId: crud.status.check_status
+      responses:
+        "200":
+          description: Check status of API
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: Up and running!

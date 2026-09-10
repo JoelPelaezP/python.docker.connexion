@@ -1,0 +1,31 @@
+[tool.poetry]
+name = "api"
+version = "0.1.0"
+description = "testing api"
+authors = ["JPP"]
+license = "free"
+readme = "README.md"
+packages = [{include = "crud"}]
+
+[tool.poetry.dependencies]
+python = "3.10.16"
+requests = "2.32.3"
+connexion = {extras = ["flask", "swagger-ui", "uvicorn"], version = "^3.1.0"}
+make = "^0.1.6.post2"
+gunicorn = "^23.0.0"
+isort = "4.3.21"
+black = "^24.10.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.extras]
+api-only-dependencies = [
+    "connexion",
+    "gunicorn"
+]
+
+[project.scripts]
+api = "crud.__main__:main"

@@ -1,0 +1,13 @@
+services:
+  python-connexion-app:
+    build:
+      context: .
+      target: dev
+    image: python-connexion-app:dev
+    container_name: python-connexion-app
+    init: true
+    platform: linux/arm64
+    ports:
+      - "3003:3003"
+    volumes:
+      - .:/app
